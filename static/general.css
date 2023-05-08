@@ -1,0 +1,9 @@
+.image-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .image-container img + img {
+    margin-left: 20px;
+  }

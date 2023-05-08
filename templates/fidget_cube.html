@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fidget Cube</title>
+</head>
+
+<body>
+  <h1>Fidget Cube</h1>
+
+      <p>The younger brother to the more popular fidget spinner, fidget cubes offer a wide range of sensory features that can help relieve stress and anxiety -
+        a better kept secret during the 2010s.
+        With different sides and buttons that offer tactile feedback, such as clicking,
+        rolling, and spinning, a fidget cube can engage and distract the mind,
+        providing a calming effect. Additionally, fidget cubes are discreet and can be used in various settings,
+        such as classrooms or workplaces, without disrupting others.
+        They are small and portable, making them easy to carry in a pocket or bag.
+        Furthermore, fidget cubes are versatile, offering different textures and activities to suit individual preferences.
+        They can be beneficial for improving focus, concentration, and fine motor skills,
+        making them suitable for both children and adults.
+        Overall, a valuable tool for managing stress, promoting relaxation,
+        and enhancing focus, making it a worthwhile purchase for those seeking a practical and effective stress-relief solution.</p>
+
+      <p>Price: £9</p>
+      <p>Environmental Impact: 2</p>
+      <br>
+      <div class="image-container">
+      <img src="{{ url_for('static', filename='images/fidget_cube.jpg') }}" alt="Fidget Cube">
+      <img src="{{ url_for('static', filename='images/fidget_cube2.jpg') }}" alt="Fidget Cube2">
+    </div>
+
+    <br><br>
+
+    <a href="{{ url_for('home') }}"><button>Return to Home Page</button></a>
+
+</body>
+</html>

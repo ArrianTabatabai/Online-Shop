@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='finished.css') }}">
+
+<head>
+  <meta charset="utf-8">
+  <title>Thank You!</title>
+</head>
+
+<body>
+  <style>
+    h1 {
+      text-align: center;
+    }
+  </style>
+  <h1>Thank you for shopping with us!</h1>
+
+  <p>Thank you for your purchase, we're checking now if your details are correct,
+    if they are you will receive an email confirmation shortly with the one you
+    provided. Following that, you'll receive your product within 5-7 days.
+
+    <br><br>
+
+    You may now close the tab, thank you!</p>
+
+    <br>
+
+    <img src="{{ url_for('static', filename='images/thank_you.gif') }}" alt="Thank You gif">
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+
+<head>
+  <meta charset="utf-8">
+  <title>Loom Bands</title>
+</head>
+
+<body>
+  <h1>Loom Bands</h1>
+
+      <p>Probably the earliest of all the 2010 trends, the real OG! Loom bands offer endless creative possibilities
+        for crafters of all ages. With their vibrant colors and versatile nature,
+        loom bands can be used to create a wide range of DIY accessories, such as bracelets, keychains, charms, and more. They provide an engaging and hands-on activity that promotes creativity and imaginative play. Moreover, loom bands are affordable and readily available in various colors, sizes, and styles, making them accessible for different crafting projects. Additionally, loom bands can be a great way to develop fine motor skills, coordination, and concentration, making them ideal for children's crafts or as a stress-relief activity for adults. They can
+        also be a fun and thoughtful gift for friends or loved ones who enjoy
+        crafting or DIY projects. Overall, loom bands offer a fun, affordable,
+        and creative outlet for self-expression and artistic endeavors, making
+        them a worthwhile purchase for those who enjoy hands-on crafting and
+        imaginative play.</p>
+
+      <p>Price: £13</p>
+      <p>Environmental Impact: 1</p>
+      <br>
+
+      <div class="image-container">
+      <img src="{{ url_for('static', filename='images/loom_bands.jpg') }}" alt="Loom Bands">
+      <img src="{{ url_for('static', filename='images/loom_bands2.jpg') }}" alt="Loom Bands2">
+      </div>
+
+      <br><br>
+
+      <a href="{{ url_for('home') }}"><button>Return to Home Page</button></a>
+
+</body>
+</html>
