@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fidget Spinner</title>
+</head>
+
+<body>
+  <h1>Fidget Spinner</h1>
+
+      <p>How cool were these? If you were alive during the mid-2010s you would recall these gadgets taking the classrooms and workplaces
+        by storm, by far the most popular and hyped up item we have for sale
+        at the moment! Not only do they look cool - fidget spinners are known to be highly effective in reducing stress and anxiety.
+        The repetitive spinning motion can provide a calming effect, helping to alleviate tension and promote relaxation.
+        They are small and portable, making them convenient for on-the-go use.
+        Moreover, fidget spinners can be a beneficial tool for improving focus and concentration,
+        making them ideal for students or individuals who require enhanced cognitive performance.
+        With their simple design and ease of use, fidget spinners can be a valuable addition to one's daily routine,
+        providing both physical and mental benefits.<br><br>And they're AWESOME!</p>
+      <p>Price: £7</p>
+      <p>Environmental Impact: 3</p>
+      <br>
+      <div class="image-container">
+      <img src="{{ url_for('static', filename='images/fidget_spinner.jpg') }}" alt="Fidget Spinner">
+      <img src="{{ url_for('static', filename='images/fidget_spinner2.jpg') }}" alt="Fidget Spinner2">
+    </div>
+
+    <br><br>
+
+    <a href="{{ url_for('home') }}"><button>Return to Home Page</button></a>
+
+</body>
+</html>

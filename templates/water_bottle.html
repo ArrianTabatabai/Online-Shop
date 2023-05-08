@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+
+<head>
+  <meta charset="utf-8">
+  <title>Water Bottle</title>
+</head>
+
+<body>
+  <h1>Water Bottle</h1>
+
+      <p>This viral trend of bottle flipping was instantly banned in schools and the workplace.
+        A fun and entertaining activity that can
+        provide a welcome break from daily routines and help relieve stress.
+        Having a designated water bottle for bottle flipping can add an
+        element of excitement and challenge to the game. Our bottle is perfect for exactly
+        this! Introducing the perfect bottle for bottle flipping enthusisats -
+        our bottle is specifically designed to provide optimal balance and
+        stability for bottle flipping, allowing you to land those
+        impressive flips with ease. The wide base and low center of gravity
+        ensure that the bottle stays upright and balanced, even when landing on
+        uneven surfaces.
+        Bottle flipping can be a social activity that can be enjoyed with friends
+        or family, making it a great way to connect and bond with others. Furthermore, bottle flipping can
+        also improve hand-eye coordination and motor skills, making it a great
+        recreational activity for individuals of all ages.
+
+        <br><br>
+
+        With a leak-proof cap and a generous 24-ounce capacity, our bottle
+        is not only great for bottle flipping, but also for staying hydrated
+        throughout the day. Whether you're at school, the office, or out on an
+        adventure, our bottle is the perfect companion. So why settle for a regular
+        water bottle when you can have one that's specifically designed for bottle
+        flipping? Get yours today and start mastering those flips like a pro!</p>
+
+      <p>Price: £2</p>
+      <p>Environmental Impact: 3</p>
+      <br>
+
+      <div class="image-container">
+      <img src="{{ url_for('static', filename='images/water_bottle.jpg') }}" alt="Water Bottle">
+      <img src="{{ url_for('static', filename='images/water_bottle2.jpg') }}" alt="Water Bottle2">
+      </div>
+
+      <br><br>
+
+      <a href="{{ url_for('home') }}"><button>Return to Home Page</button></a>
+
+</body>
+</html>

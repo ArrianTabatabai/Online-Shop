@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>2010Shop</title>
+</head>
+
+<body>
+  <style>
+    h1:first-of-type { /* only centers the first h1, as I'd like the others to remain to the sides */
+      text-align: center;
+    }
+  </style>
+  <h1>Welcome to The2010s</h1>
+
+  <p>Welcome back to the 2010s, a nostalgic trip to the good old days!
+    If you're feeling nostalgic for the trends and fads of that era,
+    you've come to the right place. We specialize in selling a range of
+    popular items from the 2010s with a retro feel, including fidget spinners, fidget cubes,
+    and loom bands. Step into a world of colorful and fun products that were
+    all the rage just a decade ago. <br><br>
+
+    <h3>The Environment</h3>
+
+    We take a lot of pride in the measures we use to protect the environment.
+    An environmental scale is a system used to measure the impact of products
+    on the environment. Our environmental scale uses a rating of 1 to 5,
+    with 1 being the best rating and 5 being the worst. The scale is designed
+    to help customers make informed decisions about the products they buy and
+    their impact on the environment.
+
+    A rating of 1 on our environmental
+    scale means that a product has minimal impact on the environment.
+    Products with this rating are made from sustainable materials, are
+    biodegradable, and/or have a minimal carbon footprint. These products
+    are the best choice for customers who want to reduce their impact on the
+    environment.
+
+    A rating of 5 on our environmental scale means that a
+    product has a severe impact on the environment. These products are made
+    from materials that are extremely harmful to the environment, or have a
+    very high carbon footprint. We strongly encourage customers to avoid
+    products with this rating, as they are the worst choice for the
+    environment. <br><br>
+
+    Generally, we avoid selling any products with a rating of
+    4 or 5 in order to best protect the enviornment. Enjoy browsing through our
+    products, and let them take you back, to The2010s!</p>
+
+  <br>
+  <div>
+    <a href="{{ url_for('home', sort='name') }}"><button>Sort by Name</button></a>
+    <a href="{{ url_for('home', sort='price') }}"><button>Sort by Price</button></a>
+    <a href="{{ url_for('home', sort='impact') }}"><button>Sort by Environmental Impact</button></a>
+  </div>
+
+  <br>
+
+  <h1>Products</h1>
+
+  <ul>
+  {% for product in products %}
+  <div>
+    <h2>{{ product.name }}</h2>
+    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+    <p>Price: £{{ product.price }}</p>
+    <p>Environmental Impact: {{ product.impact }}</p>
+    <form method="POST" action="{{ url_for('add_to_basket') }}">
+      <input type="hidden" name="product_id" value="{{ product.id }}">
+      <button type="submit">Add to Basket</button>
+    </form>
+    <a href="{{ url_for(product.name.lower().replace(' ', '_')) }}"><button>View Details</button></a>
+  </div>
+  {% endfor %}
+  </ul>
+
+<br>
+
+<h2>Basket</h2>
+
+<form method="POST" action="{{ url_for('clear_basket') }}">
+  <button type="submit">Clear Basket</button>
+</form>
+
+<p>Items in basket:</p>
+
+<ul>
+  {% set total_price = calculate_total() %}
+  {% for item in session.get('basket', []) %}
+      {% set product = Product.query.filter_by(name=item).first() %}
+      <li>{{ item }} - £{{ product.price }}</li>
+    {% endfor %}
+    <li><b>Total:</b> £{{ calculate_total() }}</li>
+</ul>
+
+<!-- disables checkout button if no items are in basket -->
+{% if calculate_total() > 0 %}
+  <a href="{{ url_for('checkout') }}"><button>Checkout</button></a>
+{% else %}
+  <button disabled>Checkout</button>
+{% endif %}
+
+<br>
+
+  <h2>Our Partners</h2>
+  <p>We're excited to announce our partnership
+    with the amazing: 'Heledd's One Stop Sock Shop'. Together, we're bringing
+    you the best of both worlds: top-quality products and unbeatable
+    customer service. </p>
+
+  <br>
+
+  <img src="{{ url_for('static', filename='images/sockshop_logo.jpg') }}" alt="Sockshop Advert">
+
+</body>
+</html>
